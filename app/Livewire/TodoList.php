@@ -43,7 +43,7 @@ class TodoList extends Component
     public function toggle($id)
     {
         try {
-            $todo = Todo::findOrFail($id);
+            $todo = Todo::find($id);
             $todo->completed = !$todo->completed;
             $todo->save();
             session()->flash('success', "Todo updated successfully.");
